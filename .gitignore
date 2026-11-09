@@ -37,6 +37,7 @@ htmlcov/
 # --- Project output ---
 single_plots/
 *.png
+processing_results/
 
 
 # --- Editors / OS ---

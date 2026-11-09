@@ -51,17 +51,17 @@ def filter_trajectories(
 # ==========================================
 def extract_trajectories_from_raw(
     raw_file_path,
-    width=2448,
-    height=2048,
+    width=1840,
+    height=1676,
     channels=1,
     num_bg_frames=10,
     threshold_value=12,
-    min_area=40,             # Increased from 8 to ignore tiny pixel specks
+    min_area=20,             # Increased from 8 to ignore tiny pixel specks
     max_area=8000,
     min_x_allowed=100,
     max_x_allowed=2350,
-    min_y_allowed=500,       # Tightened from 50 to cut left margin noise
-    max_y_allowed=1600,      # Tightened from 2000 to cut right margin noise
+    min_y_allowed=200,       # Tightened from 50 to cut left margin noise
+    max_y_allowed=1476,      # Tightened from 2000 to cut right margin noise
     max_jump_distance=180,
     max_gap_frames=8,
     min_points=15,           # Increased from 8 to reject short spurious tracks
@@ -343,7 +343,7 @@ def process_single_file(raw_file_path, position=0, output_dir="processing_result
 # 4. PARALLEL EXECUTOR
 # ==========================================
 if __name__ == "__main__":
-    RAW_FOLDER = "/home/marian/mounted1/Marysia/position_tracking/"
+    RAW_FOLDER = "/home/marian/mounted1/Marysia/position_data/new"
     OUTPUT_FOLDER = "processing_results"
 
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
